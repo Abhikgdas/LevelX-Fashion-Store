@@ -20,6 +20,8 @@
     cursor:none;
 }
 
+html,body{scroll-behavior:smooth;}
+
 body{
     background:black;
     overflow-x:hidden;
@@ -988,6 +990,25 @@ nav{
 }
 
 
+
+.lookbook-section{
+    background:#050505;
+    padding:140px 70px;
+}
+.lookbook-header{text-align:center;margin-bottom:80px;}
+.lookbook-header h2{color:white;font-size:6rem;letter-spacing:6px;}
+.lookbook-header p{color:#ff2e63;letter-spacing:8px;text-transform:uppercase;}
+.lookbook-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;}
+.look-card{position:relative;overflow:hidden;height:700px;}
+.look-card img{width:100%;height:100%;object-fit:cover;transition:.6s;}
+.look-card:hover img{transform:scale(1.08);}
+.look-content{position:absolute;bottom:40px;left:40px;color:white;}
+.look-content h3{font-size:2rem;letter-spacing:4px;}
+@media(max-width:900px){
+.lookbook-grid{grid-template-columns:1fr;}
+.look-card{height:500px;}
+}
+
 </style>
 
 </head>
@@ -1049,7 +1070,7 @@ nav{
     </div>
 
     <div class="nav-links">
-        <a href="#">Lookbook</a>
+        <a href="#lookbook">Lookbook</a>
         <a href="#">Contact</a>
     </div>
 
@@ -1197,6 +1218,42 @@ nav{
         <!-- JS GENERATED -->
     </div>
 
+</section>
+
+
+<section class="lookbook-section" id="lookbook">
+<div class="lookbook-header">
+<h2>LOOKBOOK</h2>
+<p>WEAR THE FUTURE</p>
+</div>
+
+<div class="lookbook-grid">
+
+<div class="look-card">
+<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=1200" alt="">
+<div class="look-content">
+<h3>UNDEFINED.</h3>
+<p>Not fashion. Not streetwear. LEVELX.</p>
+</div>
+</div>
+
+<div class="look-card">
+<img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1200" alt="">
+<div class="look-content">
+<h3>MINIMAL.</h3>
+<p>Built beyond trends.</p>
+</div>
+</div>
+
+<div class="look-card">
+<img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=1200" alt="">
+<div class="look-content">
+<h3>LIMITLESS.</h3>
+<p>Uniform of the future.</p>
+</div>
+</div>
+
+</div>
 </section>
 
 
@@ -1624,23 +1681,7 @@ document.getElementById("cartOverlay")
 
 
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
-    anchor.addEventListener('click', function(e) {
-
-        e.preventDefault();
-
-        const target =
-        document.querySelector(this.getAttribute('href'));
-
-        target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-        });
-
-    });
-
-});
 
 </script>
 
